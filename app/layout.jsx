@@ -1,4 +1,5 @@
 import '@/assets/styles/globals.css';
+import Navbar from '@/components/Navbar';
 import { APP_NAME, APP_DESCRIPTION, SERVER_URL } from '@/lib/constants';
 
 export const metadata = {
@@ -15,6 +16,7 @@ const MainLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
+        <Navbar />
         <main>{children}</main>
       </body>
     </html>
