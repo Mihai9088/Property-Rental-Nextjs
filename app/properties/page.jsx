@@ -1,10 +1,9 @@
-import { APP_NAME } from '@/lib/constants';
 import React from 'react';
 import properties from '@/properties.json';
 import PropertyCard from '@/components/PropertyCard';
 
 export const metadata = {
-  title: `Properties | ${APP_NAME}`,
+  title: 'Properties',
 };
 
 const PropertiesPage = () => {
