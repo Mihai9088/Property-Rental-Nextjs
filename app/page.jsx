@@ -1,7 +1,8 @@
-import React from 'react';
+import { APP_NAME } from '@/lib/constants';
 
-const HomePage = () => {
-  return <div className="text-red-600">Home Page</div>;
+export const metadata = {
+  title: `Home | ${APP_NAME}`,
 };
-
-export default HomePage;
+export default function HomePage() {
+  return <div className="text-red-600">Home Page</div>;
+}
