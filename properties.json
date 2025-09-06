@@ -1,0 +1,364 @@
+[
+  {
+    "_id": "1",
+    "owner": "1",
+    "name": "Boston Commons Retreat",
+    "type": "Apartment",
+    "description": "This is a beautiful apartment located near the commons. It is a 2 bedroom apartment with a full kitchen and bathroom. It is available for weekly or monthly rentals.",
+    "location": {
+      "street": "Strada Unirii 120",
+      "city": "București",
+      "state": "B",
+      "zipcode": "010123"
+    },
+    "beds": 2,
+    "baths": 1,
+    "square_feet": 1500,
+    "amenities": [
+      "Wifi",
+      "Full kitchen",
+      "Washer & Dryer",
+      "Free Parking",
+      "Hot Tub",
+      "24/7 Security",
+      "Wheelchair Accessible",
+      "Elevator Access",
+      "Dishwasher",
+      "Gym/Fitness Center",
+      "Air Conditioning",
+      "Balcony/Patio",
+      "Smart TV",
+      "Coffee Maker"
+    ],
+    "rates": {
+      "weekly": 1100,
+      "monthly": 4200
+    },
+    "seller_info": {
+      "name": "Ion Popescu",
+      "email": "ion.popescu@gmail.com",
+      "phone": "021-555-1111"
+    },
+    "images": ["a1.jpg", "a2.jpg", "a3.jpg"],
+    "is_featured": false,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "_id": "2",
+    "owner": "1",
+    "name": "Cozy Downtown Loft",
+    "type": "Apartment",
+    "description": "A cozy downtown loft with great city views.",
+    "location": {
+      "street": "Strada Victoriei 45",
+      "city": "Cluj-Napoca",
+      "state": "CJ",
+      "zipcode": "400123"
+    },
+    "beds": 1,
+    "baths": 1,
+    "square_feet": 1800,
+    "amenities": [
+      "Wifi",
+      "Full kitchen",
+      "Washer & Dryer",
+      "Free Parking",
+      "Hot Tub",
+      "24/7 Security",
+      "Wheelchair Accessible",
+      "Elevator Access",
+      "Dishwasher",
+      "High-Speed Internet",
+      "Air Conditioning",
+      "Smart TV",
+      "Outdoor Grill/BBQ"
+    ],
+    "rates": {
+      "weekly": 1000,
+      "monthly": 4000
+    },
+    "seller_info": {
+      "name": "Maria Ionescu",
+      "email": "maria.ionescu@gmail.com",
+      "phone": "0264-555-222"
+    },
+    "images": ["b1.jpg", "b2.jpg", "b3.jpg"],
+    "is_featured": false,
+    "createdAt": "2024-01-02T00:00:00.000Z",
+    "updatedAt": "2024-01-02T00:00:00.000Z"
+  },
+  {
+    "_id": "3",
+    "owner": "2",
+    "name": "Luxury Condo with a View",
+    "type": "Condo",
+    "description": "Experience luxury in this stunning condo with breathtaking views.",
+    "location": {
+      "street": "Bulevardul Libertății 500",
+      "city": "Brașov",
+      "state": "BV",
+      "zipcode": "500123"
+    },
+    "beds": 3,
+    "baths": 2,
+    "square_feet": 2200,
+    "amenities": [
+      "Wifi",
+      "Full kitchen",
+      "Washer & Dryer",
+      "Free Parking",
+      "Hot Tub",
+      "24/7 Security",
+      "Wheelchair Accessible",
+      "Elevator Access",
+      "Dishwasher",
+      "Swimming Pool",
+      "Gym/Fitness Center",
+      "Air Conditioning",
+      "Smart TV",
+      "Coffee Maker"
+    ],
+    "rates": {
+      "nightly": 200,
+      "weekly": 750,
+      "monthly": 3300
+    },
+    "seller_info": {
+      "name": "Andrei Georgescu",
+      "email": "andrei.georgescu@gmail.com",
+      "phone": "0268-555-333"
+    },
+    "images": ["c1.jpg", "c2.jpg", "c3.jpg"],
+    "is_featured": false,
+    "createdAt": "2024-01-03T00:00:00.000Z",
+    "updatedAt": "2024-01-03T00:00:00.000Z"
+  },
+  {
+    "_id": "4",
+    "owner": "2",
+    "name": "Charming Cottage Getaway",
+    "type": "Cottage Or Cabin",
+    "description": "Escape to this charming cottage for a peaceful retreat.",
+    "location": {
+      "street": "Strada Satului 123",
+      "city": "Sibiu",
+      "state": "SB",
+      "zipcode": "550123"
+    },
+    "beds": 1,
+    "baths": 1,
+    "square_feet": 900,
+    "amenities": ["Fireplace", "Outdoor Grill/BBQ", "Balcony/Patio", "Coffee Maker"],
+    "rates": {
+      "weekly": 2000
+    },
+    "seller_info": {
+      "name": "Elena Dobre",
+      "email": "elena.dobre@gmail.com",
+      "phone": "0269-555-444"
+    },
+    "images": ["d1.jpg", "d2.jpg", "d3.jpg"],
+    "is_featured": false,
+    "createdAt": "2024-01-04T00:00:00.000Z",
+    "updatedAt": "2024-01-04T00:00:00.000Z"
+  },
+  {
+    "_id": "5",
+    "owner": "3",
+    "name": "Modern Downtown Studio",
+    "type": "Studio",
+    "description": "Stay in style in this modern downtown studio apartment.",
+    "location": {
+      "street": "Strada Urbană 75",
+      "city": "Timișoara",
+      "state": "TM",
+      "zipcode": "300123"
+    },
+    "beds": 1,
+    "baths": 1,
+    "square_feet": 900,
+    "amenities": [
+      "High-Speed Internet",
+      "Smart TV",
+      "Air Conditioning",
+      "Gym/Fitness Center",
+      "Outdoor Grill/BBQ"
+    ],
+    "rates": {
+      "weekly": 1100,
+      "monthly": 4200
+    },
+    "seller_info": {
+      "name": "Mihai Enache",
+      "email": "mihai.enache@gmail.com",
+      "phone": "0256-555-555"
+    },
+    "images": ["e1.jpg", "e2.jpg", "e3.jpg"],
+    "is_featured": true,
+    "createdAt": "2024-01-05T00:00:00.000Z",
+    "updatedAt": "2024-01-05T00:00:00.000Z"
+  },
+  {
+    "_id": "6",
+    "owner": "3",
+    "name": "Seaside Retreat",
+    "type": "House",
+    "description": "Escape to this seaside house for a relaxing getaway.",
+    "location": {
+      "street": "Strada Mării 456",
+      "city": "Constanța",
+      "state": "CT",
+      "zipcode": "900123"
+    },
+    "beds": 4,
+    "baths": 3,
+    "square_feet": 2800,
+    "amenities": [
+      "Beach Access",
+      "Swimming Pool",
+      "Balcony/Patio",
+      "Smart TV",
+      "Outdoor Grill/BBQ"
+    ],
+    "rates": {
+      "nightly": 500,
+      "weekly": 2500
+    },
+    "seller_info": {
+      "name": "Sorina Radu",
+      "email": "sorina.radu@gmail.com",
+      "phone": "0241-555-666"
+    },
+    "images": ["f1.jpg", "f2.jpg", "f3.jpg"],
+    "is_featured": true,
+    "createdAt": "2024-01-06T00:00:00.000Z",
+    "updatedAt": "2024-01-06T00:00:00.000Z"
+  },
+  {
+    "_id": "7",
+    "owner": "4",
+    "name": "Rustic Cabin in the Woods",
+    "type": "Cottage Or Cabin",
+    "description": "Experience nature in this cozy rustic cabin.",
+    "location": {
+      "street": "Strada Pădurii 789",
+      "city": "Brașov",
+      "state": "BV",
+      "zipcode": "500456"
+    },
+    "beds": 2,
+    "baths": 1,
+    "square_feet": 1100,
+    "amenities": ["Fireplace", "Outdoor Grill/BBQ", "Hiking Trails Access", "Pet-Friendly"],
+    "rates": {
+      "nightly": 475,
+      "weekly": 2000
+    },
+    "seller_info": {
+      "name": "Radu Marinescu",
+      "email": "radu.marinescu@gmail.com",
+      "phone": "0268-555-777"
+    },
+    "images": ["g1.jpg", "g2.jpg", "g3.jpg"],
+    "is_featured": false,
+    "createdAt": "2024-01-07T00:00:00.000Z",
+    "updatedAt": "2024-01-07T00:00:00.000Z"
+  },
+  {
+    "_id": "8",
+    "owner": "5",
+    "name": "Ski-In/Ski-Out Chalet",
+    "type": "Chalet",
+    "description": "Hit the slopes from this cozy ski-in/ski-out chalet.",
+    "location": {
+      "street": "Strada Muntelui 321",
+      "city": "Sinaia",
+      "state": "PH",
+      "zipcode": "106100"
+    },
+    "beds": 3,
+    "baths": 2,
+    "square_feet": 1800,
+    "amenities": ["Ski Equipment Storage", "Fireplace", "Balcony/Patio", "Smart TV"],
+    "rates": {
+      "nightly": 300,
+      "weekly": 1100
+    },
+    "seller_info": {
+      "name": "Ana Matei",
+      "email": "ana.matei@gmail.com",
+      "phone": "0244-555-888"
+    },
+    "images": ["h1.jpg", "h2.jpg", "h3.jpg"],
+    "is_featured": false,
+    "createdAt": "2024-01-08T00:00:00.000Z",
+    "updatedAt": "2024-01-08T00:00:00.000Z"
+  },
+  {
+    "_id": "9",
+    "owner": "6",
+    "name": "Mountain View Retreat",
+    "type": "House",
+    "description": "Enjoy stunning mountain views from this spacious retreat.",
+    "location": {
+      "street": "Strada Vârfului 600",
+      "city": "Râșnov",
+      "state": "BV",
+      "zipcode": "505400"
+    },
+    "beds": 4,
+    "baths": 3,
+    "square_feet": 2400,
+    "amenities": [
+      "Mountain View",
+      "Hiking Trails Access",
+      "Air Conditioning",
+      "Smart TV",
+      "Outdoor Grill/BBQ"
+    ],
+    "rates": {
+      "weekly": 1000,
+      "monthly": 3800
+    },
+    "seller_info": {
+      "name": "Cristina Pavel",
+      "email": "cristina.pavel@gmail.com",
+      "phone": "0268-555-999"
+    },
+    "images": ["i1.jpg", "i2.jpg", "i3.jpg"],
+    "is_featured": false,
+    "createdAt": "2024-01-09T00:00:00.000Z",
+    "updatedAt": "2024-01-09T00:00:00.000Z"
+  },
+  {
+    "_id": "10",
+    "owner": "7",
+    "name": "Historic Downtown Loft",
+    "type": "Apartment",
+    "description": "Step back in time with a stay in this historic downtown loft.",
+    "location": {
+      "street": "Strada Istoriei 123",
+      "city": "Iași",
+      "state": "IS",
+      "zipcode": "700123"
+    },
+    "beds": 2,
+    "baths": 1,
+    "square_feet": 1200,
+    "amenities": ["High-Speed Internet", "Air Conditioning", "Smart TV", "Coffee Maker"],
+    "rates": {
+      "weekly": 550,
+      "monthly": 2100
+    },
+    "seller_info": {
+      "name": "George Dumitrescu",
+      "email": "george.dumitrescu@gmail.com",
+      "phone": "0232-555-000"
+    },
+    "images": ["j1.jpg", "j2.jpg", "j3.jpg"],
+    "is_featured": false,
+    "createdAt": "2024-01-10T00:00:00.000Z",
+    "updatedAt": "2024-01-10T00:00:00.000Z"
+  }
+]
