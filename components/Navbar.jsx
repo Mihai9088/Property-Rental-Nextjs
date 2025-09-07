@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -14,17 +14,46 @@ const Navbar = () => {
 
   const pathname = usePathname();
 
+  const profileMenuRef = useRef(null);
+
+  const mobileMenuRef = useRef(null);
+  const mobileButtonRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (profileMenuRef.current && !profileMenuRef.current.contains(event.target)) {
+        setIsProfileMenuOpen(false);
+      }
+
+      if (
+        isMobileMenuOpen &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target) &&
+        mobileButtonRef.current &&
+        !mobileButtonRef.current.contains(event.target)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <nav className="bg-blue-700 border-b border-blue-500">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
             <button
+              ref={mobileButtonRef}
               type="button"
               id="mobile-dropdown-button"
               className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
-              aria-expanded="false"
+              aria-expanded={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             >
               <span className="absolute -inset-0.5"></span>
@@ -49,7 +78,6 @@ const Navbar = () => {
           <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
             <Link className="flex flex-shrink-0 items-center" href="/">
               <Image className="h-10 w-auto" src={logo} alt="MVEstates" />
-
               <span className="hidden md:block text-white text-2xl font-bold ml-2">MV ESTATES</span>
             </Link>
 
@@ -97,7 +125,10 @@ const Navbar = () => {
           )}
 
           {isLoggedIn && (
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
+            <div
+              className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0"
+              ref={profileMenuRef}
+            >
               <Link href="/messages" className="relative group">
                 <button
                   type="button"
@@ -130,52 +161,27 @@ const Navbar = () => {
                   <button
                     type="button"
                     className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                    id="user-menu-button"
-                    aria-expanded="false"
-                    aria-haspopup="true"
                     onClick={() => setIsProfileMenuOpen((prev) => !prev)}
                   >
-                    <span className="absolute -inset-1.5"></span>
-                    <span className="sr-only">Open user menu</span>
                     <Image className="h-8 w-8 rounded-full" src={profileDefault} alt="" />
                   </button>
                 </div>
 
                 {isProfileMenuOpen && (
                   <div
-                    id="user-menu"
                     className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                     role="menu"
-                    aria-orientation="vertical"
-                    aria-labelledby="user-menu-button"
-                    tabIndex="-1"
                   >
-                    <Link
-                      href="/profile"
-                      className="block px-4 py-2 text-sm text-gray-700"
-                      role="menuitem"
-                      tabIndex="-1"
-                      id="user-menu-item-0"
-                    >
+                    <Link href="/profile" className="block px-4 py-2 text-sm text-gray-700">
                       Your Profile
                     </Link>
                     <Link
                       href="/properties/saved"
                       className="block px-4 py-2 text-sm text-gray-700"
-                      role="menuitem"
-                      tabIndex="-1"
-                      id="user-menu-item-2"
                     >
                       Saved Properties
                     </Link>
-                    <button
-                      className="block px-4 py-2 text-sm text-gray-700"
-                      role="menuitem"
-                      tabIndex="-1"
-                      id="user-menu-item-2"
-                    >
-                      Sign Out
-                    </button>
+                    <button className="block px-4 py-2 text-sm text-gray-700">Sign Out</button>
                   </div>
                 )}
               </div>
@@ -185,7 +191,7 @@ const Navbar = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div id="mobile-menu">
+        <div id="mobile-menu" ref={mobileMenuRef}>
           <div className="space-y-1 px-2 pb-3 pt-2">
             <Link
               href="/"
