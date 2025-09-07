@@ -3,7 +3,9 @@ import PropertyHeaderImage from '@/components/PropertyHeaderImage';
 import connectDB from '@/config/database';
 import Property from '@/models/Property';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { FaArrowLeft } from 'react-icons/fa';
+import mongoose from 'mongoose';
 
 export const metadata = {
   title: `Property`,
@@ -11,6 +13,11 @@ export const metadata = {
 
 const PropertyPage = async ({ params }) => {
   await connectDB();
+
+  if (!mongoose.Types.ObjectId.isValid(params.id)) {
+    notFound();
+  }
+
   const property = await Property.findById(params.id).lean();
 
   return (
