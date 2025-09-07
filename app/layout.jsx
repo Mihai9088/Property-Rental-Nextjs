@@ -2,6 +2,7 @@ import '@/assets/styles/globals.css';
 import Navbar from '@/components/Navbar';
 import { APP_NAME, APP_DESCRIPTION, SERVER_URL } from '@/lib/constants';
 import Footer from '@/components/Footer';
+import AuthProvider from '@/components/AuthProvider';
 
 export const metadata = {
   title: {
@@ -15,13 +16,15 @@ export const metadata = {
 
 const MainLayout = ({ children }) => {
   return (
-    <html lang="en">
-      <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <AuthProvider>
+      <html lang="en">
+        <body>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </AuthProvider>
   );
 };
 
