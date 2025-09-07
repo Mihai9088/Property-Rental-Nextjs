@@ -14,11 +14,13 @@ export const metadata = {
 const PropertyPage = async ({ params }) => {
   await connectDB();
 
-  if (!mongoose.Types.ObjectId.isValid(params.id)) {
+  const { id } = await params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
     notFound();
   }
 
-  const property = await Property.findById(params.id).lean();
+  const property = await Property.findById(id).lean();
 
   return (
     <>
