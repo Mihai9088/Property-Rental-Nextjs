@@ -15,7 +15,6 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const profileMenuRef = useRef(null);
-
   const mobileMenuRef = useRef(null);
   const mobileButtonRef = useRef(null);
 
@@ -36,11 +35,24 @@ const Navbar = () => {
       }
     }
 
+    function handleResize() {
+      if (window.innerWidth >= 768) {
+        setIsMobileMenuOpen(false);
+      }
+    }
+
     document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('resize', handleResize);
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('resize', handleResize);
     };
   }, [isMobileMenuOpen]);
+
+  const handleMobileLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <nav className="bg-blue-700 border-b border-blue-500">
@@ -195,6 +207,7 @@ const Navbar = () => {
           <div className="space-y-1 px-2 pb-3 pt-2">
             <Link
               href="/"
+              onClick={handleMobileLinkClick}
               className={`${
                 pathname === '/' ? 'bg-black' : ''
               } text-white block rounded-md px-3 py-2 text-base font-medium`}
@@ -203,6 +216,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/properties"
+              onClick={handleMobileLinkClick}
               className={`${
                 pathname === '/properties' ? 'bg-black' : ''
               } text-white block rounded-md px-3 py-2 text-base font-medium`}
@@ -212,6 +226,7 @@ const Navbar = () => {
             {isLoggedIn && (
               <Link
                 href="/properties/add"
+                onClick={handleMobileLinkClick}
                 className={`${
                   pathname === '/properties/add' ? 'bg-black' : ''
                 } text-white block rounded-md px-3 py-2 text-base font-medium`}
