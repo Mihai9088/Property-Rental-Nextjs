@@ -4,6 +4,7 @@ import connectDB from '@/config/database';
 import Property from '@/models/Property';
 
 const HomeProperties = async () => {
+  await connectDB();
   const recentProperties = await Property.find().sort({ createdAt: -1 }).limit(3).lean();
 
   return (
