@@ -363,7 +363,17 @@ const PropertyAddForm = () => {
           className="border rounded w-full py-2 px-3"
           accept="image/*"
           multiple
+          required
+          onInvalid={(e) => e.target.setCustomValidity('Select at least one image')}
+          onInput={(e) => e.target.setCustomValidity('')}
+          onChange={(e) => {
+            if (e.target.files.length > 4) {
+              alert('You can select maximum 4 images');
+              e.target.value = '';
+            }
+          }}
         />
+        <p className="text-sm text-gray-500 mt-1">Select up to 4 images</p>
       </div>
 
       <div>

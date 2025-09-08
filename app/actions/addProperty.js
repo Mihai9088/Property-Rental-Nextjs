@@ -20,6 +20,10 @@ async function addProperty(formData) {
   const amenities = formData.getAll('amenities');
   const images = formData.getAll('images').filter((image) => image.name !== '');
 
+  if (images.length === 0) {
+    return { error: 'Adaugă cel puțin o poză!' };
+  }
+
   const propertyData = {
     type: formData.get('type'),
     name: formData.get('name'),
@@ -37,7 +41,7 @@ async function addProperty(formData) {
     rates: {
       weekly: formData.get('rates.weekly'),
       monthly: formData.get('rates.monthly'),
-      nightly: formData.get('rates.nightly.'),
+      nightly: formData.get('rates.nightly'),
     },
     seller_info: {
       name: formData.get('seller_info.name'),

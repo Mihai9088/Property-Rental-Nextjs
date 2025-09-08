@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { FaArrowLeft } from 'react-icons/fa';
 import mongoose from 'mongoose';
+import PropertyImages from '@/components/PropertyImages';
 
 export const metadata = {
   title: `Property`,
@@ -35,6 +36,7 @@ const PropertyPage = async ({ params }) => {
           </div>
         </div>
       </section>
+      <PropertyImages images={property.images} />
     </>
   );
 };
