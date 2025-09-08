@@ -16,10 +16,6 @@ const PropertyPage = async ({ params }) => {
 
   const { id } = await params;
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    notFound();
-  }
-
   const property = await Property.findById(id).lean();
 
   return (
