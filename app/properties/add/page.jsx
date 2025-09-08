@@ -1,5 +1,4 @@
 import PropertyAddForm from '@/components/PropertyAddForm';
-import React from 'react';
 
 export const metadata = {
   title: 'Add Property',

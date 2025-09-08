@@ -3,9 +3,7 @@ import PropertyHeaderImage from '@/components/PropertyHeaderImage';
 import connectDB from '@/config/database';
 import Property from '@/models/Property';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 import { FaArrowLeft } from 'react-icons/fa';
-import mongoose from 'mongoose';
 import PropertyImages from '@/components/PropertyImages';
 
 export const metadata = {
