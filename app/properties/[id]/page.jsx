@@ -5,6 +5,9 @@ import Property from '@/models/Property';
 import Link from 'next/link';
 import { FaArrowLeft } from 'react-icons/fa';
 import PropertyImages from '@/components/PropertyImages';
+import BookmarkButton from '@/components/BookmarkButton';
+import ShareButtons from '@/components/ShareButtons';
+import PropertyContactForm from '@/components/PropertyContactForm';
 
 export const metadata = {
   title: `Property`,
@@ -15,7 +18,9 @@ const PropertyPage = async ({ params }) => {
 
   const { id } = await params;
 
-  const property = await Property.findById(id).lean();
+  const propertyDoc = await Property.findById(id).lean();
+
+  const property = JSON.parse(JSON.stringify(propertyDoc));
 
   return (
     <>
@@ -31,6 +36,11 @@ const PropertyPage = async ({ params }) => {
         <div className="container m-auto py-10 px-6">
           <div className="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
             <PropertyDetails property={property} />
+            <aside className="space-y-4">
+              <BookmarkButton property={property} />
+              <ShareButtons property={property} />
+              <PropertyContactForm property={property} />
+            </aside>
           </div>
         </div>
       </section>
