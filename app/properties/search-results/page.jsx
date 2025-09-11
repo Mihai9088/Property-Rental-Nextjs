@@ -10,7 +10,6 @@ import { normalizeString } from '@/utils/normalizeString';
 const SearchResultsPage = async (props) => {
   await connectDB();
 
-  // await pe searchParams ca să nu mai urle compilatorul
   const { location = '', propertyType = 'All' } = (await props.searchParams) || {};
 
   const normalizedLocation = normalizeString(location);
