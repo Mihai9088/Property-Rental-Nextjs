@@ -67,9 +67,6 @@ const PropertyImages = ({ images }) => {
           doubleTapDelay: 300,
           doubleClickZoom: true,
         }}
-        toolbar={{
-          buttons: ['close', 'fullscreen', 'zoomIn', 'zoomOut', 'resetZoom', 'thumbnails'],
-        }}
       />
     </section>
   );
