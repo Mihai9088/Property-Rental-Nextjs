@@ -40,10 +40,6 @@ A modern real estate platform built with **Next.js 14**, featuring authenticatio
 ## 🚀 Getting Started
 
 ### 1. Clone the repo
-```bash
-git clone https://github.com/yourusername/mvestates.git
-cd mvestates
-```
 
 ### 2. Install dependencies
 ```bash
